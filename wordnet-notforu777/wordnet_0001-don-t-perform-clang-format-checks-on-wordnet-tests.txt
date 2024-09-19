@@ -1,0 +1,25 @@
+From d87b58b7ba560d6e25cbbeb5fdd4426d1b7630f4 Mon Sep 17 00:00:00 2001
+From: Evgeniy Osipov <osipov2005@yandex.ru>
+Date: Thu, 13 May 2021 14:51:09 +0300
+Subject: [PATCH] don't perform clang-format checks on wordnet tests
+
+---
+ .github/workflows/cpp_project.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.github/workflows/cpp_project.yml b/.github/workflows/cpp_project.yml
+index 7c0f1e7..e6ad7ef 100644
+--- a/.github/workflows/cpp_project.yml
++++ b/.github/workflows/cpp_project.yml
+@@ -25,7 +25,7 @@ jobs:
+       uses: DoozyX/clang-format-lint-action@v0.11
+       with:
+         source: '.'
+-        exclude: './googletest ./test'
++        exclude: './googletest ./tests'
+         extensions: 'h,cpp'
+         clangFormatVersion: 11
+     - uses: actions/checkout@v2
+-- 
+2.30.1 (Apple Git-130)
+
